@@ -1,0 +1,8 @@
+ErickHunter-1 ansible_host=65.109.129.32 ansible_port=22 ansible_user=root
+
+[web_servers]
+ErickHunter-1
+
+
+
+

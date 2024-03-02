@@ -1,0 +1,11 @@
+---
+
+users:
+  -
+    name: erick
+    groups: sudo
+    key:  https://github.com/erickhunter.keys
+  -
+    name: ubuntu
+    groups: sudo
+    key: https://github.com/erickhunter.keys

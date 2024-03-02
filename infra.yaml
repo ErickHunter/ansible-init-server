@@ -1,0 +1,20 @@
+---
+- name: Initial setup
+  hosts: all
+  roles:
+    - init
+  tags:
+    - init
+    
+- name: Initial setup SSH
+  hosts: all
+  roles:
+    - configure-ssh
+  tags:
+    - ssh
+
+
+
+
+  
+

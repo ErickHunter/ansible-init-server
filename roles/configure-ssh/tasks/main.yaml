@@ -1,0 +1,16 @@
+---
+- name: Configure SSH settings
+  ansible.builtin.lineinfile:
+    path: /etc/ssh/sshd_config
+    regexp: "{{ item.regexp }}"
+    line: "{{ item.line }}"
+  with_items:
+    - { regexp: "^#?PermitRootLogin", line: "PermitRootLogin no" }
+    - { regexp: "^#?PasswordAuthentication", line: "PasswordAuthentication no" }
+    - { regexp: "^#?Port", line: "Port 22" } # I don't like changeing the port.
+  notify: restart ssh
+
+- name: Disable root SSH login
+  ansible.builtin.user:
+    name: root
+    password_lock: true
